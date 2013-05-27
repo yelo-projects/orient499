@@ -1,0 +1,5 @@
+.wrapper.header#Header
+	.nav
+		a#Logo.url-home(href="#home")
+		each gallery in galleries
+			a(class="url url-"+gallery.id, href='#'+gallery.id, id=gallery.id+"-link")= gallery.desc.title

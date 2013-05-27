@@ -1,0 +1,26 @@
+{
+	"title":"Orient 499"
+,	"port":80
+,	"copyright": "&copy; Orient 499 / design and development by yelostudio"
+,	"scripts":["components/jquery/jquery","main"]
+,	"is_dev":false
+,	"salt":"fwyr2837bcn92u3j333]d#$I*$*$dsf90347867ncc@#$&@#"
+,	"galleries":["home","clothes","objects","contactus","press"]
+,	"styles":{
+		"colors":{
+			"golden_light": "#d1bf9a"
+		,	"golden": "#C6AF80"
+		,	"text": "#5E5E5E"
+		,	"links": "#999"
+		,	"faded": "#aaa"
+		}
+	,	"sizes":{
+			"marginTop": "10px"
+		,	"mainWidth": "866px"
+		,	"maxHeight": "550px"
+		,	"headerHeight": "40px"
+		,	"footerHeight": "20px"
+		,	"buttonSize": "100px"
+		}
+	}
+}

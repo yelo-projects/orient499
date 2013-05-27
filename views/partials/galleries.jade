@@ -1,0 +1,25 @@
+.wrapper.scroll-wrapper#Pages
+	.scroll-pane(class="has-"+galleries.length)
+		each gallery in galleries
+			.page.active.scroll-item(id=gallery.id+"-page")
+				h1.anchor(id=gallery.id)= gallery.desc.title || gallery.id
+				.gallery.wrapper.scroll-wrapper
+					.gallery-images.scroll-pane(class="has-"+gallery.images.length)
+						each image,index in gallery.images
+							.gallery-image.active.scroll-item(class="gallery-image-"+index)
+								.image
+									img.lazy(id=gallery.id+"-image-"+index,src="images/trans.gif", data-src='photos/'+image.file,alt=(image.title||image.file))
+									noscript
+										img(src='photos/'+image.file,alt=(image.title||image.file))
+									//img(src='photos/'+image.file,alt=(image.title||image.file))
+								if image.title || image.desc
+									.details
+										h3=image.title
+										p!=image.desc
+								.controls
+									if index != 0
+										a.control.previous(href="#"+gallery.id+"-image-"+(index-1))
+									if index != gallery.images.length -1
+										a.control.next(href="#"+gallery.id+"-image-"+(index+1))
+				if gallery.desc.desc
+					.page-description!= gallery.desc.desc

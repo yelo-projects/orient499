@@ -1,0 +1,24 @@
+sizes(mainWidth,maxHeight,marginTop,headerHeight,footerHeight)
+	maxHeight = (mainWidth/size_mainWidth) * size_maxHeight
+	mainHeight = (maxHeight - headerHeight - footerHeight);
+	.anchor
+		top:-(headerHeight + marginTop);
+	.details
+		height:(mainHeight - (60+30) - (20*2));
+	#Body
+		width:mainWidth;
+		height:maxHeight;
+		margin-top:marginTop;
+	#Pages
+		height:mainHeight;
+	.wrapper
+		width:mainWidth
+	.scroll-wrapper
+		width:mainWidth;
+	.scroll-item
+		height:mainHeight;
+		width:mainWidth;
+	#Footer
+		height:footerHeight;
+	#Header
+		height:headerHeight;
