@@ -5,9 +5,9 @@ html
 		include partials/meta.jade
 		title= title
 		link(rel="stylesheet", type="text/css", href="http://fonts.googleapis.com/css?family=PT+Sans")
-		link(rel='stylesheet', href='/style.css')
+		link(rel='stylesheet', href='style.css')
 		each s in scripts
-			script(type="text/javascript", src="/js/"+s+".js")
+			script(type="text/javascript", src="js/"+s+".js")
 	body
 	block header
 		include partials/header.jade
