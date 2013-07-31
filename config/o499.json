@@ -2,7 +2,7 @@
 	"title":"Orient 499"
 ,	"port":80
 ,	"copyright": "&copy; Orient 499 / design and development by yelostudio"
-,	"scripts":["components/jquery/jquery","main"]
+,	"scripts":["main"]
 ,	"is_dev":false
 ,	"salt":"fwyr2837bcn92u3j333]d#$I*$*$dsf90347867ncc@#$&@#"
 ,	"galleries":["home","clothes","objects","contactus","press"]

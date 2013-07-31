@@ -5,7 +5,8 @@ html
 		include partials/meta.jade
 		title= title
 		link(rel="stylesheet", type="text/css", href="http://fonts.googleapis.com/css?family=PT+Sans")
-		link(rel='stylesheet', href='style.css')
+		link(rel='stylesheet', type="text/css", href='style.css')
+		script(type="text/javascript", src="http://code.jquery.com/jquery-1.10.1.min.js")
 		each s in scripts
 			script(type="text/javascript", src="js/"+s+".js")
 	body
