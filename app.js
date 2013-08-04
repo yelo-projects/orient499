@@ -10,9 +10,12 @@ var express = require('express')
   , path = require('path')
   , config = require('konphyg')(__dirname + '/config/')('o499')
   ,	galleries = require('./lib/galleries')('public/photos',config.galleries)
+  ,	stylus = require('./lib/stylus')(config)
+  ,	fs = require('fs')
+  ,	stylesheetPath = path.join(__dirname, 'styles/style.styl')
 ;
-config.galleries = galleries;
 
+config.galleries = galleries;
 var app = express();
 app.locals(config)
 
@@ -24,7 +27,7 @@ app.use(express.bodyParser());
 app.use(express.methodOverride());
 app.use(express.cookieParser(config.salt));
 app.use(app.router);
-app.use(require('./lib/stylus')(config));
+//app.use(require('./lib/stylus')(config));
 app.use(express.static(path.join(__dirname, 'public')));
 
 // development only
@@ -34,6 +37,9 @@ if ('development' == app.get('env')) {
 
 app.get('/', routes.index);
 
-http.createServer(app).listen(config.port, function(){
-  console.log('Express server listening on port ' + config.port);
+var styles = stylus(fs.readFileSync(stylesheetPath,{encoding:'utf8'}),stylesheetPath).render(function(err,css){
+	app.locals.css = css;
+	http.createServer(app).listen(config.port, function(){
+  		console.log('Express server listening on port ' + config.port);
+	});
 });
