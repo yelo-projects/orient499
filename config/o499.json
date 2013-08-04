@@ -1,6 +1,6 @@
 {
 	"title":"Orient 499"
-,	"port":80
+,	"port":8080
 ,	"copyright": "&copy; Orient 499 / design and development by yelostudio"
 ,	"scripts":["main"]
 ,	"is_dev":false
