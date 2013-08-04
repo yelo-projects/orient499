@@ -27,7 +27,7 @@ app.use(express.bodyParser());
 app.use(express.methodOverride());
 app.use(express.cookieParser(config.salt));
 app.use(app.router);
-//app.use(require('./lib/stylus')(config));
+if(config.is_dev){app.use(require('./lib/stylus')(config));}
 app.use(express.static(path.join(__dirname, 'public')));
 
 // development only
@@ -37,9 +37,17 @@ if ('development' == app.get('env')) {
 
 app.get('/', routes.index);
 
-var styles = stylus(fs.readFileSync(stylesheetPath,{encoding:'utf8'}),stylesheetPath).render(function(err,css){
-	app.locals.css = css;
-	http.createServer(app).listen(config.port, function(){
-  		console.log('Express server listening on port ' + config.port);
-	});
-});
+var listen = function(){
+    http.createServer(app).listen(config.port, function(){
+        console.log('Express server listening on port ' + config.port);
+    });
+}
+
+if(!config.is_dev){
+  var styles = stylus(fs.readFileSync(stylesheetPath,{encoding:'utf8'}),stylesheetPath).render(function(err,css){
+  	app.locals.css = css;
+    listen()
+  });
+}else{
+  listen();
+}
