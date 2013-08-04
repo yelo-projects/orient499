@@ -13,9 +13,11 @@
 										img(src='photos/'+image.file,alt=(image.title||image.file))
 									//img(src='photos/'+image.file,alt=(image.title||image.file))
 								if image.title || image.desc
-									.details
-										h3=image.title
-										p!=image.desc
+									.details-container
+										.details-wrapper
+											.details
+												h3=image.title
+												p!=image.desc
 								.controls
 									if index != 0
 										a.control.previous(href="#"+gallery.id+"-image-"+(index-1))

@@ -1,14 +1,31 @@
 .details,.page-description
-	position:absolute;
-	top:0;
-	right:0;
-	width:35%;
-	margin:60px 0 30px 0;
+	width:25%;
 	padding:20px;
 	background:white;
 	background:rgba(255,255,255,0.7);
 	opacity:0;
 	transition(all 1s);
+
+.details-container
+	height:100%
+	display:table;
+	overflow:hidden;
+	width:100%;
+	position:absolute;
+	top:0;
+	left:0;
+
+.details-wrapper
+	height:100%;
+	width:100%;
+	display:table-cell;
+	vertical-align:middle;
+
+.details
+	padding-right:size_buttonSize+5;
+	text-align:justify;
+	text-justify:inter-word;
+	float:right;
 
 .page-description
 	opacity:1;
