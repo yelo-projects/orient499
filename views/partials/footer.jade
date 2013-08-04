@@ -1,2 +1,8 @@
+mixin socialLink(name,address)
+	a.social-link(href="http://www."+name+".com/"+address,class="social-link-"+name,target="_BLANK")=name
+
 .wrapper#Footer
 	span.minitext!= copyright
+	span.social-links
+		mixin socialLink('facebook','orient499')
+		mixin socialLink('instagram','orient499')
