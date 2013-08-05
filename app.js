@@ -13,6 +13,8 @@ var express = require('express')
   ,	stylus = require('./lib/stylus')(config)
   ,	fs = require('fs')
   ,	stylesheetPath = path.join(__dirname, 'styles/style.styl')
+  , uglify = require('uglify-js')
+  , scriptPath = path.join(__dirname, 'public/js/')
 ;
 
 config.galleries = galleries;
@@ -44,6 +46,8 @@ var listen = function(){
 }
 
 if(!config.is_dev){
+  var scripts = (function(scripts,rs){for(s in scripts){rs[s] = scriptPath+scripts[s]+'.js';};return rs;})(app.locals.scripts,[]);
+  app.locals.js = uglify.minify(scripts).code;
   var styles = stylus(fs.readFileSync(stylesheetPath,{encoding:'utf8'}),stylesheetPath).render(function(err,css){
   	app.locals.css = css;
     listen()

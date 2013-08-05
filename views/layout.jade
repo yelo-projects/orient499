@@ -10,8 +10,13 @@ html
 		else
 			style(type="text/css")!=css
 		script(type="text/javascript", src="http://code.jquery.com/jquery-1.10.1.min.js")
-		each s in scripts
-			script(type="text/javascript", src="js/"+s+".js")
+		if !is_dev
+			script(type="text/javascript")
+				var _gaq = _gaq || [];
+				!{js}
+		else
+			each s in scripts
+				script(type="text/javascript", src="js/"+s+".js")
 	body
 	block header
 		include partials/header.jade

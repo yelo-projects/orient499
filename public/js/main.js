@@ -1,17 +1,21 @@
-var _gaq = _gaq || [];
+
 
 jQuery(function($){
 
-	/** google analytics  -- start ** /
+	var _gaq_exists = (typeof _gaq!='undefined');
+
+	/** google analytics  -- start **/
 	
-	_gaq.push(['_setAccount', 'UA-42967251-1']);
-	(function(){
-		var ga = document.createElement('script');
-		ga.type = 'text/javascript';
-		ga.async = true;
-		ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-		var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-	})();
+	if(_gaq_exists){
+		(function(){
+			_gaq.push(['_setAccount', 'UA-42967251-1']);
+			var ga = document.createElement('script');
+			ga.type = 'text/javascript';
+			ga.async = true;
+			ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+			var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+		})();
+	}
 
 	/** google analytics  -- end **/
 
@@ -99,7 +103,7 @@ jQuery(function($){
 		if(pageId=='#contactus'){
 			lazyLoadImage($('#contactus-page .gallery-image-1 img'),pageId,imageId,1);
 		}
-		_gaq.push(['_trackPageview', location.pathname + location.search  + location.hash]);
+		if(_gaq_exists){_gaq.push(['_trackPageview', location.pathname + location.search  + location.hash]);}
 	}
 
 	$("a[href^=#]").on("click", function(evt){

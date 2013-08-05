@@ -10,6 +10,7 @@
     "jade": "*",
     "stylus": "*",
     "konphyg" : "*",
-    "nib":"*"
+    "nib":"*",
+    "uglify-js":"*"
   }
 }
