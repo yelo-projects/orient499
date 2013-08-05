@@ -465,7 +465,8 @@ h4 {
 .controls .previous {
   left: -33.333333333333336px;
 }
-.details {
+.details,
+.page-description {
   width: 25%;
   padding: 20px;
   background: #fff;
@@ -482,6 +483,13 @@ h4 {
   text-align: justify;
   text-justify: inter-word;
   float: right;
+}
+.page-description {
+  position: absolute;
+  top: 0;
+  opacity: 1;
+  -ms-filter: none;
+  filter: none;
 }
 .details-container {
   height: 100%;
@@ -529,6 +537,9 @@ h4 {
   opacity: 1;
   -ms-filter: none;
   filter: none;
+}
+.gallery-image.active .image {
+  background: none;
 }
 #contactus-page .controls {
   display: none;
@@ -1048,52 +1059,5 @@ h4 {
     opacity: 1;
     -ms-filter: none;
     filter: none;
-  }
-}
-@media only screen and (min-width : 1301px) {
-  .anchor {
-    top: -40px;
-  }
-  #Body {
-    width: 1400px;
-    height: 889.1454965357968px;
-    margin-top: 0;
-  }
-  #Pages {
-    height: 829.1454965357968px;
-  }
-  .wrapper {
-    width: 1400px;
-  }
-  .scroll-wrapper {
-    width: 1400px;
-  }
-  .scroll-item {
-    height: 829.1454965357968px;
-    width: 1400px;
-  }
-  #Footer {
-    height: 20px;
-  }
-  #Header {
-    height: 40px;
-  }
-  #Header,
-  #Pages {
-    font-size: 140%;
-  }
-  #Logo {
-    width: 300px;
-  }
-  .gallery-image img {
-    opacity: 1;
-    -ms-filter: none;
-    filter: none;
-    width: 100%;
-    height: 100%;
-  }
-  .gallery-image {
-    width: 100%;
-    height: 100%;
   }
 }

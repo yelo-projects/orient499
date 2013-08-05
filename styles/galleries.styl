@@ -1,4 +1,4 @@
-.details
+.details, .page-description
 	width:25%;
 	padding:20px;
 	background:white;
@@ -9,6 +9,11 @@
 	text-align:justify;
 	text-justify:inter-word;
 	float:right;
+
+.page-description
+	position:absolute;
+	top:0;
+	opacity:1;
 
 .details-container
 	height:100%
@@ -48,3 +53,6 @@
 	&.active
 		.controls
 			opacity:1;	
+	&.active
+		.image
+			background:none;
