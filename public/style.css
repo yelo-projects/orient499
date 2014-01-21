@@ -272,6 +272,9 @@ h4 {
 .social-link:before {
   content: "| ";
 }
+.social-link:first-child:before {
+  content: "";
+}
 .social-link:hover {
   text-decoration: underline;
 }
