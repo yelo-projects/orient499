@@ -1,5 +1,3 @@
 # Orient 499's website
 
-### todo
-- fix contact us page
-- make responsive
+git pull, npm install, ./run-dev or ./run-prod, then load in browser to generate the correct file
