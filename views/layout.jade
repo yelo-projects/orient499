@@ -1,4 +1,4 @@
-doctype 5
+doctype html
 html
 	head
 	block head
@@ -11,7 +11,7 @@ html
 			style(type="text/css")!=css
 		script(type="text/javascript", src="http://code.jquery.com/jquery-1.10.1.min.js")
 		if !is_dev
-			script(type="text/javascript")
+			script.
 				var _gaq = _gaq || [];
 				!{js}
 		else

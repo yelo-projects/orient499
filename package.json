@@ -1,16 +1,32 @@
 {
-  "name": "application-name",
-  "version": "0.0.1",
-  "private": true,
-  "scripts": {
-    "start": "node app.js"
-  },
+  "name": "orient499",
+  "version": "0.0.0",
+  "description": "website",
+  "main": "app.js",
   "dependencies": {
-    "express": "3.2.5",
-    "jade": "*",
-    "stylus": "*",
-    "konphyg" : "*",
-    "nib":"*",
-    "uglify-js":"*"
-  }
+    "express": "~3.2.5",
+    "jade": "~1.3.1",
+    "konphyg": "~1.4.0",
+    "nib": "~1.0.2",
+    "stylus": "~0.43.1",
+    "uglify-js": "~2.4.13"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "run-dev"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/yelo-projects/orient499.git"
+  },
+  "keywords": [
+    "website",
+    "static"
+  ],
+  "author": "yelostudio",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/yelo-projects/orient499/issues"
+  },
+  "homepage": "https://github.com/yelo-projects/orient499"
 }
